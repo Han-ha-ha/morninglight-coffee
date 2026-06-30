@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="晨光咖啡 - 每一杯，都是温暖的开始。精选世界各地优质咖啡豆，由资深咖啡师手工冲煮。" />
+    <meta name="author" content="Han - 13531521167@163.com" />
+    <meta name="designer" content="Han" />
+    <meta name="contact" content="13531521167@163.com" />
+    <title>晨光咖啡 | Morning Light Coffee</title>
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error(
+              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+            )
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

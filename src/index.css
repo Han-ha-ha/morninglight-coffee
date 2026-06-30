@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-coffee-800 bg-cream-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-coffee-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-coffee-900 text-cream-50 font-display tracking-wider text-sm uppercase border border-gold-400 rounded-sm transition-all duration-300 hover:bg-coffee-800 hover:-translate-y-0.5 hover:shadow-lg relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-gold-400/30 to-transparent -translate-x-full transition-transform duration-700;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-transparent text-coffee-900 font-display tracking-wider text-sm uppercase border-2 border-coffee-900 rounded-sm transition-all duration-300 hover:bg-coffee-900 hover:text-cream-50;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .gold-divider {
+    @apply w-20 h-px bg-gold-400 mx-auto;
+  }
+
+  .gold-divider-left {
+    @apply w-20 h-px bg-gold-400;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-hover-zoom img {
+    @apply transition-transform duration-700 hover:scale-110;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+  }
+
+  .animate-fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .animate-fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+  .animate-fade-up-delay-4 { animation-delay: 0.4s; opacity: 0; }
+  .animate-fade-up-delay-5 { animation-delay: 0.5s; opacity: 0; }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-coffee-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-coffee-600;
+}
