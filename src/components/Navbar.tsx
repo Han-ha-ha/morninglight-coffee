@@ -32,7 +32,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        isScrolled || location.pathname !== '/'
           ? 'bg-coffee-950/95 backdrop-blur-md shadow-lg py-3'
           : 'bg-transparent py-6'
       }`}
@@ -41,12 +41,12 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 group">
           <Coffee
             className={`w-8 h-8 transition-colors duration-300 ${
-              isScrolled ? 'text-gold-400' : 'text-cream-50'
+              isScrolled || location.pathname !== '/' ? 'text-gold-400' : 'text-cream-50'
             } group-hover:text-gold-400`}
           />
           <span
             className={`font-display text-xl md:text-2xl font-semibold tracking-wider transition-colors duration-300 ${
-              isScrolled ? 'text-cream-50' : 'text-cream-50'
+              isScrolled || location.pathname !== '/' ? 'text-cream-50' : 'text-cream-50'
             }`}
           >
             晨光咖啡
@@ -61,7 +61,7 @@ export default function Navbar() {
               className={`relative font-display text-sm tracking-widest uppercase transition-colors duration-300 ${
                 location.pathname === link.path
                   ? 'text-gold-400'
-                  : isScrolled
+                  : isScrolled || location.pathname !== '/'
                   ? 'text-cream-50 hover:text-gold-400'
                   : 'text-cream-50/90 hover:text-gold-400'
               }`}
